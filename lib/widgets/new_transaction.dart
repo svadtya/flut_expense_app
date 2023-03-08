@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_expense_app/widgets/user_transactions.dart';
 
 class NewTransaction extends StatelessWidget {
   final titleController = TextEditingController();
