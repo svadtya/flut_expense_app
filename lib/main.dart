@@ -59,7 +59,7 @@ class MyHomePage extends StatelessWidget {
                           width: 2,
                         )),
                         padding: EdgeInsets.all(10),
-                        child: Text(tx.amount.toString(),
+                        child: Text("\$${tx.amount.toString()}",
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
                               fontSize: 20,
@@ -69,9 +69,9 @@ class MyHomePage extends StatelessWidget {
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
-                          Text(tx.title, style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15, color: Colors.deepPurple),),
+                          Text(tx.title, style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16, color: Colors.black),),
                           Text(
-                            tx.date.toString(), style: TextStyle(fontSize: 10,color: Colors.grey),
+                            tx.date.toString(), style: TextStyle(fontSize: 12,color: Colors.grey),
                           )
                         ],
                       )
