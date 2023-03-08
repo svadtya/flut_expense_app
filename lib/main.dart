@@ -33,7 +33,6 @@ class MyHomePage extends StatelessWidget {
           title: Text('Flutter App'),
         ),
         body: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
             Container(
@@ -42,6 +41,19 @@ class MyHomePage extends StatelessWidget {
                 color: Colors.blue,
                 child: Text('CHART'),
                 elevation: 5,
+              ),
+            ),
+            Card(
+              elevation: 5,
+              child: Container(
+                padding: EdgeInsets.all(10),
+                child: Column(
+                  children: <Widget>[
+                    TextField(decoration: InputDecoration(labelText: 'Title')),
+                    TextField(decoration: InputDecoration(labelText: 'Amount')),
+                    TextButton(onPressed: () {}, child: Text('Add Transaction'), style: TextButton.styleFrom(foregroundColor: Colors.purple),)
+                  ],
+                ),
               ),
             ),
             Column(
@@ -70,9 +82,16 @@ class MyHomePage extends StatelessWidget {
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
-                          Text(tx.title, style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16, color: Colors.black),),
                           Text(
-                            DateFormat.yMMMd().format(tx.date), style: TextStyle(fontSize: 12,color: Colors.grey),
+                            tx.title,
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 16,
+                                color: Colors.black),
+                          ),
+                          Text(
+                            DateFormat.yMMMd().format(tx.date),
+                            style: TextStyle(fontSize: 12, color: Colors.grey),
                           )
                         ],
                       )
