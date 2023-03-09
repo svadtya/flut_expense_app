@@ -24,7 +24,8 @@ class _NewTransactionState extends State<NewTransaction> {
 
     widget.newTxHandler(enteredTitle, enteredAmount);
 
-    Navigator.of(context).pop(); // Close the top most screen (modal sheet) after submit data
+    Navigator.of(context)
+        .pop(); // Close the top most screen (modal sheet) after submit data
   }
 
   @override
@@ -46,10 +47,26 @@ class _NewTransactionState extends State<NewTransaction> {
                   decimal: true), // To allow for decimal places on iOS
               onSubmitted: (_) => submitData(),
             ),
-            TextButton(
-              onPressed: submitData,
-              child: Text('Add Transaction'),
-              style: TextButton.styleFrom(foregroundColor: Colors.purple),
+            Container(
+              height: 70,
+              child: Row(
+                children: <Widget>[
+                  Text('No Date Chosen!'),
+                  TextButton(
+                    onPressed: () {},
+                    child: Text('Choose Date', style: TextStyle(fontWeight: FontWeight.bold)),
+                    style: TextButton.styleFrom(
+                        foregroundColor: Theme.of(context).primaryColor),
+                  )
+                ],
+              ),
+            ),
+            Align(
+              alignment: Alignment.centerRight,
+              child: ElevatedButton(
+                onPressed: submitData,
+                child: Text('Add Transaction'),
+              ),
             ),
           ],
         ),
